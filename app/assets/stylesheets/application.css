@@ -1,0 +1,67 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+
+@import url(http://fonts.googleapis.com/css?family=Raleway+Dots);
+@import url(http://fonts.googleapis.com/css?family=Wire+One);
+
+
+html {
+  /* set up a background image */
+  background: #303030;
+
+  /* the follow is the code to have the image display as a full page */
+  background-position: center;
+  background-attachment: fixed;
+  -webkit-background-size: cover; /* the next 3 lines are "browser prefixes", they are necessary to include for CSS3 techniques */
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#container {
+  text-align: center;
+  font-family: 'Raleway Dots', cursive;
+  font-size: 60px;
+  padding: 10px;
+  color: #F15B4F;
+  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+  line-height: 65px;
+  height: 100%;
+}
+
+/* #logo {
+  background: url(../image/logo.png) no-repeat;
+  height: 50%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+*/
+
+#login {
+
+  font-family: 'Wire One', sans-serif;
+  font-size: 30px;
+  border-radius:25px;
+  padding: 5px;
+  height: 30%;
+  width: 30%;
+  color: white;
+  border: solid 2px white;
+  background: #787878;
+  margin-left: auto;
+  margin-right: auto;
+}
+}
