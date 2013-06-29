@@ -4,6 +4,10 @@ FactoryGirl.define do
     last_name 'Miller'
   end
 
+  factory :state_license do
+    state_name 'New York'
+  end
+
 
 
 

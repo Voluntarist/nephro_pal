@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130629191643) do
+ActiveRecord::Schema.define(:version => 20130629204710) do
+
+  create_table "doctor_states", :force => true do |t|
+    t.integer  "state_license_id"
+    t.integer  "doctor_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "doctor_states", ["state_license_id", "doctor_id"], :name => "index_doctor_states_on_state_license_id_and_doctor_id"
 
   create_table "doctors", :force => true do |t|
     t.string   "first_name"
@@ -23,5 +32,9 @@ ActiveRecord::Schema.define(:version => 20130629191643) do
   end
 
   add_index "doctors", ["state_id", "license_id"], :name => "index_doctors_on_state_id_and_license_id"
+
+  create_table "state_licenses", :force => true do |t|
+    t.string "state_name"
+  end
 
 end
