@@ -5,7 +5,7 @@ FactoryGirl.define do
   end
 
   factory :state_license do
-    state_name 'New York'
+    state_name 'Arkansas'
   end
 
 
