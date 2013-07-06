@@ -15,7 +15,7 @@ describe Doctor do
     state_license = create(:state_license)
     doctor.state_licenses << [state_license]
     doctor.state_licenses << [state_license]
-    doctor.state_licenses == [state_license]
+    doctor.state_licenses.should == [state_license]
   end
 
   it 'adds two different state ids to a doctor' do
