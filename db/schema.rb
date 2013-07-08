@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130629204710) do
+ActiveRecord::Schema.define(:version => 20130706200923) do
+
+  create_table "doctor_insurances", :force => true do |t|
+    t.integer  "insurance_license_id"
+    t.integer  "doctor_id"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  add_index "doctor_insurances", ["insurance_license_id", "doctor_id"], :name => "index_doctor_insurances_on_insurance_license_id_and_doctor_id"
 
   create_table "doctor_states", :force => true do |t|
     t.integer  "state_license_id"
@@ -25,13 +34,17 @@ ActiveRecord::Schema.define(:version => 20130629204710) do
   create_table "doctors", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "state_id"
-    t.integer  "license_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "state_license_id"
+    t.integer  "insurance_license_id"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
-  add_index "doctors", ["state_id", "license_id"], :name => "index_doctors_on_state_id_and_license_id"
+  add_index "doctors", ["state_license_id", "insurance_license_id"], :name => "index_doctors_on_state_license_id_and_insurance_license_id"
+
+  create_table "insurance_licenses", :force => true do |t|
+    t.string "insurance_name"
+  end
 
   create_table "state_licenses", :force => true do |t|
     t.string "state_name"

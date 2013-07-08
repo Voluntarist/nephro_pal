@@ -1,8 +1,9 @@
 class Doctor < ActiveRecord::Base
   attr_accessible :first_name, :last_name
   has_many :doctor_states
+  has_many :doctor_insurances
   has_many :state_licenses, :through => :doctor_states, :uniq => true
-  has_many :insurance_licenses, :through => :doctor_insurance, :uniq => true
+  has_many :insurance_licenses, :through => :doctor_insurances, :uniq => true
 
 
   def self.eligible_doctors(state_name)
