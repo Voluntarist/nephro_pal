@@ -13,7 +13,8 @@ FactoryGirl.define do
   end
 
   factory :biopsy do
-
+    association :state_license
+    association :insurance_license
   end
 
 

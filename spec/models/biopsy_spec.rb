@@ -14,5 +14,17 @@ describe Biopsy do
   it {should respond_to(:insurance_license)}
 
 
+  describe 'the #eligible_doctors method' do
+    it 'locates the list of eligible doctors' do
+      doc1 = create(:doctor)
+      doc2 = create(:doctor)
+      doc1.state_licenses << state_license
+      doc1.insurance_licenses << insurance_license
+      doc1.save
+      biopsy.eligible_doctors.should == [doc1]
+
+    end
+  end
+
 
 end
