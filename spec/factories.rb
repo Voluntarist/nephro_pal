@@ -8,6 +8,10 @@ FactoryGirl.define do
     state_name 'Arkansas'
   end
 
+  factory :insurance_license do
+    insurance_name 'Blue Cross'
+  end
+
 
 
 
