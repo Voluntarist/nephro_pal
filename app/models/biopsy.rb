@@ -1,3 +1,7 @@
 class Biopsy < ActiveRecord::Base
-  attr_accessible :state_id, :license_id, :is_new
+  # attr_accessible :title, :body
+  belongs_to :state_license
+  belongs_to :insurance_license
+
+
 end

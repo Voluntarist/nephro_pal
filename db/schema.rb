@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130706200923) do
+ActiveRecord::Schema.define(:version => 20130708212848) do
+
+  create_table "biopsies", :force => true do |t|
+    t.boolean  "new_doctor"
+    t.integer  "state_license_id"
+    t.integer  "insurance_license_id"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
 
   create_table "doctor_insurances", :force => true do |t|
     t.integer  "insurance_license_id"
@@ -40,7 +48,9 @@ ActiveRecord::Schema.define(:version => 20130706200923) do
     t.datetime "updated_at",           :null => false
   end
 
+  add_index "doctors", ["insurance_license_id"], :name => "index_doctors_on_insurance_license_id"
   add_index "doctors", ["state_license_id", "insurance_license_id"], :name => "index_doctors_on_state_license_id_and_insurance_license_id"
+  add_index "doctors", ["state_license_id"], :name => "index_doctors_on_state_license_id"
 
   create_table "insurance_licenses", :force => true do |t|
     t.string "insurance_name"

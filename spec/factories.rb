@@ -12,7 +12,9 @@ FactoryGirl.define do
     insurance_name 'Blue Cross'
   end
 
+  factory :biopsy do
 
+  end
 
 
 end
