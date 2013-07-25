@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Biopsy do
-  let (:biopsy){create(:biopsy)}
+  let (:biopsy){create(:biopsy_with_state_license)}
   let (:state_license){create(:state_license)}
   let (:insurance_license){create(:insurance_license)}
 

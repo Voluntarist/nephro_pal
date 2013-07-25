@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130708212848) do
+ActiveRecord::Schema.define(:version => 20130712200807) do
+
+  create_table "assignments", :force => true do |t|
+    t.integer  "doctor_id"
+    t.integer  "biopsy_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "biopsies", :force => true do |t|
     t.boolean  "new_doctor"

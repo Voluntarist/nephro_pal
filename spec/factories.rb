@@ -6,6 +6,10 @@ FactoryGirl.define do
 
   factory :state_license do
     state_name 'Arkansas'
+
+    factory :state_license_with_biopsy do
+      association :biopsy
+    end
   end
 
   factory :insurance_license do
@@ -13,9 +17,15 @@ FactoryGirl.define do
   end
 
   factory :biopsy do
-    association :state_license
     association :insurance_license
+
+    factory :biopsy_with_state_license do
+      association :state_license
+    end
   end
 
+  factory :assignment do
+
+  end
 
 end

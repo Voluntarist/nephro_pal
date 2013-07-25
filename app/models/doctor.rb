@@ -4,6 +4,7 @@ class Doctor < ActiveRecord::Base
   has_many :doctor_insurances
   has_many :state_licenses, :through => :doctor_states, :uniq => true
   has_many :insurance_licenses, :through => :doctor_insurances, :uniq => true
+  has_many :assignments
 
   scope :alphabetical, order('last_name ASC')
   scope :has_state, lambda {|state_name| includes(:state_licenses).where("state_licenses.state_name" => state_name) }
