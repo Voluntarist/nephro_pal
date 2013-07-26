@@ -18,4 +18,6 @@ NephroPal::Application.routes.draw do
 
 
 
+
+
 end

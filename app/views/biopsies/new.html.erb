@@ -1,0 +1,6 @@
+<h1> New Biopsy </h1>
+
+<%= form_for(@biopsy) do |f| %>
+  <%= f.select :state_license_id, StateLicense.find(:all).each {|s| s.state_name} %>
+  <%= f.submit  %>
+<% end %>
