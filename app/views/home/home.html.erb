@@ -6,3 +6,9 @@
 <tr><a href="/" class="large button">Update Doctor *only admin*</a></tr>
 <tr><a href="/" class="large button">LOG-OUT!</a></tr>
 </table>
+
+<% if user_signed_in? %>
+  <%= link_to "Sign-Out", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign in", new_user_session_path %>
+<% end %>

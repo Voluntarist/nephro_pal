@@ -1,5 +1,7 @@
 NephroPal::Application.routes.draw do
 
+  devise_for :users
+
   get 'assignments/new/:biopsy_id', :to => 'assignments#new'
   resources :assignments
   resources :doctors
