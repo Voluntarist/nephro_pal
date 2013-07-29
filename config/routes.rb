@@ -1,5 +1,6 @@
 NephroPal::Application.routes.draw do
 
+  get 'assignments/new/:biopsy_id', :to => 'assignments#new'
   resources :assignments
   resources :doctors
   resources :biopsies, :only => [:new, :create]
@@ -7,8 +8,6 @@ NephroPal::Application.routes.draw do
 
 
   root :to => 'home#index'
-
-  get "/yo" => 'home#index'
 
   get "/home" => 'home#home'
 

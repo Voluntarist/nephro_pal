@@ -1,1 +1,5 @@
-<h1> hey </h1>
+<%= form_for(@assignment) do |f| %>
+  <%= f.hidden_field :biopsy_id   %>
+  <%= f.select :doctor_id, options_from_collection_for_select(@eligible_doctors, "id", "name") %>
+  <%= f.submit %>
+<% end %>

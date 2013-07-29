@@ -16,6 +16,9 @@ class Doctor < ActiveRecord::Base
     self.has_state(args[:state_name]).has_insurance(args[:insurance_name]).alphabetical
   end
 
+  def name
+    "#{first_name if first_name}#{' ' if (first_name && last_name)}#{last_name if last_name}"
+  end
 
 
 end
