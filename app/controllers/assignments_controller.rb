@@ -1,6 +1,7 @@
 class AssignmentsController < ApplicationController
 before_filter :authenticate_user!
   def index
+    @assignment = Assignment.find(:all)
   end
 
   def new
