@@ -5,7 +5,7 @@ gem 'pg'
 gem 'jquery-rails'
 gem 'haml'
 #gem 'bcrypt-ruby'
-gem 'sqlite3'
+gem 'pg'
 gem 'devise'
 gem 'simple_form'
 
@@ -16,9 +16,6 @@ group :assets do
   gem 'zurb-foundation', '~> 4.0.0'
 end
 
-#group :production, :staging do
- # gem 'pg'
-# end
 
 group :development, :test do
   gem 'pry-rails'

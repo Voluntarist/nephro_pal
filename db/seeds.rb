@@ -85,7 +85,7 @@ insurances.each do |insurance|
 end
 
 
-d1 = Doctor.create(:first_name => "Chris", :last_name => "Larsen", :insurance_license_id => 3, :state_license_id => 1)
+d1 = Doctor.create(:first_name => "Chris", :last_name => "Larsen")
 d2 = Doctor.create(:first_name => "Steve", :last_name => "Bonsib")
 d3 = Doctor.create(:first_name => "Fred", :last_name => "Sylva")
 
