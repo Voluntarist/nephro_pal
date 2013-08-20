@@ -11,13 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= simple_form_for @doctor do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.association :state_licenses, label_method: :state_name, value_method: :id, as: :check_boxes  %>
+      <%= f.association :insurance_licenses, label_method: :insurance_name, value_method: :id, as: :check_boxes %>
+      <%= f.button :submit %>
+    <% end %>
+
+
+<%# as: :select, input_html:{multiple:true} %>
+
+
 <% end %>

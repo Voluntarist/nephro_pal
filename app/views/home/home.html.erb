@@ -1,14 +1,16 @@
-<h1> Welcome </h1>
+<h1>What would you like to do? </h1>
 
-<table>
-<tr><a href="/biopsies/new" class="large button">New Case</a></tr>
-<tr><a href="#" class="large button">Add Doctor *only admin*</a></tr>
-<tr><a href="/" class="large button">Update Doctor *only admin*</a></tr>
-<tr><a href="/" class="large button">LOG-OUT!</a></tr>
-</table>
+<%= link_to "New Case", new_biopsy_path %>
+</br>
+<%= link_to "Update Doctor", doctors_path %>
+<br/>
+<%= link_to "New Doctor", new_doctor_path %>
+<br/>
 
 <% if user_signed_in? %>
-  <%= link_to "Sign-Out", destroy_user_session_path, method: :delete %>
+  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
 <% else %>
   <%= link_to "Sign in", new_user_session_path %>
 <% end %>
+
+

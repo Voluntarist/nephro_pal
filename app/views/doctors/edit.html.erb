@@ -4,3 +4,16 @@
 
 <%= link_to 'Show', @doctor %> |
 <%= link_to 'Back', doctors_path %>
+
+
+<h1> Current States/Insurances </h1>
+<h3> STATES </h3>
+<% states = @doctor.state_licenses.sort %>
+  <% states.each do |state| %>
+    <%= state.state_name %>
+  <% end %>
+<h3> INSURANCES </h3>
+<% insurances = @doctor.insurance_licenses.sort %>
+<% insurances.each do |insurance| %>
+  <%= insurance.insurance_name %>
+<% end %>

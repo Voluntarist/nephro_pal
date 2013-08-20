@@ -4,8 +4,25 @@
   <b>Name:</b>
   <%= @doctor.first_name %>
   <%= @doctor.last_name %>
+  <br>
+  <h5> States </h5>
+  <% states = @doctor.state_licenses %>
+    <% states.each do |state| %>
+      <%= state.state_name %>
+    <% end %>
+</br>
+<div id="woah">
+  <h5> Insurance </h5>
+<% insurances = @doctor.insurance_licenses %>
+  <% insurances.each do |insurance| %>
+    <%= insurance.insurance_name %>
+  <% end %>
 </p>
+</div>
 
 
 <%= link_to 'Edit', edit_doctor_path(@doctor) %> |
-<%= link_to 'Back', doctors_path %>
+<%= link_to 'Back', doctors_path %> |
+<%= link_to 'Delete', @doctor, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%# this is not working? why? %>
+<%#= link_to 'Delete', doctor, method: :delete, data: { confirm: 'Are you sure?' } %>

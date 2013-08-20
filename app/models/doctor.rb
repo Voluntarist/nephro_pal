@@ -1,6 +1,6 @@
 class Doctor < ActiveRecord::Base
   #can we do a migration to add an image to doctor model?
-  attr_accessible :first_name, :last_name
+  attr_accessible :first_name, :last_name, :insurance_license_ids, :state_license_ids
   has_many :doctor_states
   has_many :doctor_insurances
   has_many :state_licenses, :through => :doctor_states, :uniq => true

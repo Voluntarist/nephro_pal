@@ -1,6 +1,7 @@
 class AssignmentsController < ApplicationController
 before_filter :authenticate_user!
   def index
+    @doctor = Doctor.find(:all)
     @assignment = Assignment.find(:all)
   end
 
@@ -10,7 +11,6 @@ before_filter :authenticate_user!
     @eligible_doctors = Doctor.eligible_doctors(
       {:state_name => @assignment.biopsy.state_name,
        :insurance_name => @assignment.biopsy.insurance_name})
-
   end
 
   def create

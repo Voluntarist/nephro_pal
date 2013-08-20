@@ -55,6 +55,9 @@ class DoctorsController < ApplicationController
 
   # PUT /doctors/1
   # PUT /doctors/1.json
+
+
+  # AJAX here?!?!?!?!?!?!?
   def update
     @doctor = Doctor.find(params[:id])
 
@@ -69,9 +72,10 @@ class DoctorsController < ApplicationController
     end
   end
 
-  # DELETE /doctors/1
-  # DELETE /doctors/1.json
+  #DELETE /doctors/1
+  #DELETE /doctors/1.json
   def destroy
+    binding.pry
     @doctor = Doctor.find(params[:id])
     @doctor.destroy
 

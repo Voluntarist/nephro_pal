@@ -1,16 +1,19 @@
-@import url(http://fonts.googleapis.com/css?family=Press+Start+2P);
+@import url(http://fonts.googleapis.com/css?family=Patua+One);
 @import url(http://fonts.googleapis.com/css?family=Homenaje);
+
+
 
 
 #container {
    width: 800px;
    margin: 0 auto;
+
 }
 
 h1 {
 
   font-family: 'Homenaje', sans-serif;
-  color: orange;
+  color: #ffffff;
   font-size: 75px;
   text-shadow: 2px 5px 5px #000;
 
@@ -18,10 +21,11 @@ h1 {
 
 h3 {
 
-  font-family: 'Homenaje', sans-serif;
-  color: orange;
-  font-size: 50px;
+  font-family: 'Patua One', cursive;
+  color: #CCFFFF;
+  font-size: 25px;
   text-shadow: 2px 5px 5px #000;
+
 
 }
 
@@ -30,19 +34,21 @@ h3 {
 body {
   text-align: center;
   font-family: 'Homenaje', sans-serif;
+  background: #33CC66;
 }
 
 .large-4 {
-  width: 40%;
+  width: 30%;
   text-align: center;
   margin: 0 auto;
+
 }
 
 .small-8  {
 
   margin: 0 auto;
   width: 50%;
-
+  color: white;
 }
 
 

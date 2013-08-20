@@ -7,14 +7,18 @@ gem 'haml'
 #gem 'bcrypt-ruby'
 gem 'sqlite3'
 gem 'devise'
+gem 'simple_form'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
-  ## Add Foundation Here
-  gem 'zurb-foundation'
+  gem 'zurb-foundation', '~> 4.0.0'
 end
+
+#group :production, :staging do
+ # gem 'pg'
+# end
 
 group :development, :test do
   gem 'pry-rails'

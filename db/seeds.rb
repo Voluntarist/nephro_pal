@@ -46,7 +46,7 @@ states = [
   {:state_name => "New Mexico"},
   {:state_name => "New York"},
   {:state_name => "North Carolina"},
-  {:state_name => "North Dakota"},
+  {:staste_name => "North Dakota"},
   {:state_name => "Ohio"},
   {:state_name => "Oklahoma"},
   {:state_name => "Oregon"},
@@ -72,12 +72,20 @@ states = [
     end
   end
 
+insurances = [
+  {:insurance_name => "Blue-Cross"},
+  {:insurance_name => "Medicaid"},
+  {:insurance_name => "Medicare"}
+]
+
+insurances.each do |insurance|
+  unless InsuranceLicense.find_by_insurance_name(insurance[:insurance_name])
+    InsuranceLicense.create(:insurance_name => insurance[:insurance_name])
+  end
+end
 
 
-
-
-
-d1 = Doctor.create(:first_name => "Chris", :last_name => "Larsen")
+d1 = Doctor.create(:first_name => "Chris", :last_name => "Larsen", :insurance_license_id => 3, :state_license_id => 1)
 d2 = Doctor.create(:first_name => "Steve", :last_name => "Bonsib")
 d3 = Doctor.create(:first_name => "Fred", :last_name => "Sylva")
 

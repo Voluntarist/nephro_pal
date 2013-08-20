@@ -1,3 +1,14 @@
-<%= @assignment.each do |assignment| %>
-<%= assignment.doctor_id %>
-<% end %>
+<%# how would you write a condition to only print the names of the doctors with cases assigned to them? %>
+  <% @doctor.each do |doctor| %>
+    <%= doctor.first_name %>
+    <%= doctor.last_name %>
+    <%= doctor.assignment_ids %>
+  <% end %>
+
+
+
+
+<%#= @assignment.each do |assignment| %>
+<%#= assignment.doctor_id %>
+<%# end %>
+
